@@ -1,0 +1,93 @@
+.jersey-section {
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a23;
+  color: #00ffff;
+}
+
+.jersey-section::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.05) 25%, transparent 25%, transparent 75%, rgba(0, 255, 255, 0.05) 75%),
+              linear-gradient(45deg, rgba(0, 255, 255, 0.05) 25%, transparent 25%, transparent 75%, rgba(0, 255, 255, 0.05) 75%);
+  background-size: 50px 50px;
+  animation: gridMove 30s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.card-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  position: relative;
+  border-radius: 8px;
+  height: 450px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 80px -10px black;
+  overflow: hidden;
+}
+
+.footer {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  bottom: 0;
+}
+
+svg#curve {
+  position: absolute;
+  fill: white;
+  left: 0;
+  bottom: 0;
+  width: 400px;
+  height: 450px;
+}
+
+.info {
+  padding-left: 20px;
+  transform: translateY(250px);
+  transition: transform 1s cubic-bezier(.31, 1.21, .64, 1.02);
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover .info {
+  transform: translateY(0px);
+}
+
+.name {
+  font-weight: bolder;
+  padding-top: 5px;
+}
+
+.job {
+  margin-top: 10px;
+}
